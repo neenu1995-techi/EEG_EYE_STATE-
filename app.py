@@ -14,7 +14,7 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, roc_auc_score, roc_curve, confusion_matrix
 
 # Streamlit UI setup
-st.title("EEG Eye Dataset Classification App 🧠👀")
+st.title("🧠👀 DEEPEGAZE CLASSIFIER🧠👀")
 
 # Upload dataset
 st.sidebar.header("Upload Dataset")
