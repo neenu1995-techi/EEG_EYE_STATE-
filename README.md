@@ -1,4 +1,7 @@
 # EEG EYE STATE 
+## EEG Data Classification with Machine Learning
+
+This project focuses on analyzing and classifying EEG (electroencephalogram) data using machine learning techniques. The goal is to process raw EEG EYE STATE signals and build predictive models that can classify cognitive or neurological states when the eyes is open and closed.
 
 ## INTRODUCTION TO EEG
 
