@@ -1,41 +1,77 @@
 # EEG EYE STATE 
-## EEG Data Classification with Machine Learning
+# 🧠 DEEPEGAZE CLASSIFIER 👀
 
-This project focuses on analyzing and classifying EEG (electroencephalogram) data using machine learning techniques. The goal is to process raw EEG EYE STATE signals and build predictive models that can classify cognitive or neurological states when the eyes is open and closed.
+This Streamlit web app performs binary classification on EEG eye-tracking data using multiple supervised machine learning algorithms. It enables easy comparison of model performance, evaluation through confusion matrix and ROC curves, and provides visual insights into the results.The goal is to process raw EEG EYE STATE signals and build predictive models that can classify cognitive or neurological states when the eyes is open and closed.
 
-## INTRODUCTION TO EEG
+---
 
-EEG stands for Electroencephalography. In simple terms: EEG is a method to record the electrical activity of the brain.
+
 
 ### Description about Dataset
 
 All data is from one continuous EEG measurement with the Emotiv EEG Neuroheadset. The duration of the measurement was 117 seconds. The eye state was detected via a camera during the EEG measurement and added later manually to the file after analyzing the video frames. '1' indicates the eye-closed and '0' the eye-open state. All values are in chronological order with the first measured value at the top of the data.
 The features correspond to 14 EEG measurements from the headset, originally labeled AF3, F7, F3, FC5, T7, P, O1, O2, P8, T8, FC6, F4, F8, AF4, in that order.
 
-### EEG Data Machine Learning Pipeline
+## 📁 Project Structure
 
-This repository contains a Jupyter Notebook that performs data preprocessing, feature engineering, and machine learning modeling on EEG (Electroencephalogram) data. The aim is to prepare the dataset for predictive modeling tasks.
+---
 
-## Project Structure
-The notebook (Final_ML_EEG_DATA.ipynb) follows these main steps:
+## 🧪 ML Pipeline
 
-**1. Data Loading**
-Importing EEG dataset(s) into the environment.
+1. **Data Collection**  
+   - Uses `EEG_EYE_DATASET.csv` with EEG eye-tracking data and class labels.
 
-**2. Data Preparation**
-Cleaning and organizing the dataset to prepare it for analysis.
+2. **Data Cleaning & Preprocessing**  
+   - Drops irrelevant columns like `id`  
+   - Keeps only binary class labels (1 and 2 → converted to 0 and 1)  
+   - Scales features using `StandardScaler`
 
-**3. Summary Statistics**
-Exploring and understanding the distribution of the data.
+3. **Exploratory Data Analysis (EDA)**  
+   - Displays dataset preview  
+   - Heatmaps for confusion matrices  
+   - Accuracy bar chart for model comparison
 
-**4. Duplicate Check**
-Identifying and removing any duplicate records.
+4. **Model Building**  
+   Implements 7 supervised classification algorithms:
+   - Logistic Regression
+   - K-Nearest Neighbors (KNN)
+   - Decision Tree
+   - Random Forest
+   - Support Vector Machine (SVM)
+   - Naive Bayes
+   - Gradient Boosting
 
-**5. Feature Scaling and Normalization**
-Applying normalization techniques to standardize feature ranges.
+5. **Model Evaluation**  
+   - Accuracy Score  
+   - Confusion Matrix (Seaborn Heatmap)  
+   - ROC Curve & AUC Score
 
-**6.Model Training (Likely in later sections)**
-Applying machine learning models for classification or regression tasks based on the processed EEG data.
+6. **Model Saving & Deployment**  
+   - Real-time interactive web app using Streamlit  
+   - Deployment-ready (locally or on Streamlit Cloud)
+
+---
+
+## 🧰 Tech Stack / Tools Used
+
+- **Language**: Python  
+- **Data Analysis**: Pandas, NumPy  
+- **Machine Learning**: Scikit-learn  
+- **Visualization**: Matplotlib, Seaborn, Plotly  
+- **Web App**: Streamlit  
+- **Environment**: Jupyter Notebook & Python Scripts
+
+---
+
+## 📊 Results
+
+- Evaluation Metrics (varies per model):
+  - **Accuracy**
+  - **ROC AUC Score**
+  - **Confusion Matrix**
+- Final output displays a **comparison of accuracy** across models and highlights the best performer.
+
+---
 
 ## Installation
 To run this project locally:
@@ -68,49 +104,9 @@ jupyter notebook
 
 (Additional libraries may be needed depending on later parts of the notebook.)
 
-## Load the EEG dataset (instructions inside the notebook).
-Follow the cells step-by-step:
- 1. Data cleaning
- 2. Feature scaling
- 3. Model fitting
- 4. Evaluation
- Modify parameters and models as needed for experiments.
-
 # Streamlit App Overview for EEG Dataset
  This Streamlit app provides an interactive web interface to upload EEG datasets and run multiple machine learning models to classify EEG eye movement data.
 
- ## ✨ Features
-Upload your EEG CSV dataset through a sidebar.
-
-### 1. Preprocessing:
-
-Filters dataset to include only Class 1 and Class 2.
-Drops the 'id' column if present.
-Standardizes features using StandardScaler.
-
-### 2. Model Training:
-
-Trains seven machine learning models automatically:
-1. Logistic Regression
-2. K-Nearest Neighbors (KNN)
-3. Decision Tree
-4. Random Forest
-5. SVM (Support Vector Machine) with linear kernel
-6. Naive Bayes
-7. Gradient Boosting
-
-### 3.  Model Evaluation:
-
-Allows users to select a model from a dropdown.
-Shows the selected model's:
-1. Confusion matrix (heatmap)
-2. ROC Curve (with AUC score)
-3. Accuracy Score
-
-### 4. Final Comparison:
-
-When clicking "Show Final Result 🎯", the app compares accuracies across all models using a bar chart.
-Displays the best-performing model and its accuracy.
 
 ## 📦 Libraries Used
 1. streamlit — for the interactive web UI
@@ -154,7 +150,7 @@ Only samples where Class is 1 or 2 are considered.
 StandardScaler is applied to features to normalize the dataset before modeling.
 
 
-# � Authors 
+# Authors 
 NEENU P RAMACHANDRAN
 
 
