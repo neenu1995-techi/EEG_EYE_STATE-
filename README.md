@@ -154,7 +154,8 @@ Only samples where Class is 1 or 2 are considered.
 StandardScaler is applied to features to normalize the dataset before modeling.
 
 
-
+# � Authors 
+NEENU P RAMACHANDRAN
 
 
 
